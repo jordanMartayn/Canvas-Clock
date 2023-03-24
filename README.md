@@ -1,5 +1,6 @@
 # Canvas-Clock
-A working analogue clock face for html using the &lt;canvas> tag and javascript.
+A working analogue clock face for html using the &lt;canvas> tag and javascript.<br>
+
 ![logo](https://github.com/jordanMartayn/Canvas-Clock/blob/main/CanvasClockBanner.png)
 
 I have written two examples to show how you might use canvas-clock, a basic and dynamic example.
