@@ -1,4 +1,4 @@
-function analogueClock(cnvs,drawClean,properties){
+function analogueClock(cnvs,drawClean){
 	const clock = {
 		cnvs, //same as cnvs:cnvs
 		ctx:cnvs.getContext("2d"),
@@ -63,9 +63,6 @@ function analogueClock(cnvs,drawClean,properties){
 		},
 
 	};
-	if(properties === true){
-		return clock;
-	}
 	function clearCnvs(){ //you can give this function clock.tcx and clock.cnv and {} alows you to access the properties of cnv
 		clock.ctx.clearRect(0, 0, cnvs.width, cnvs.height);
 	};
