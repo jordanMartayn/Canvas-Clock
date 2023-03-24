@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<title> Dynamic Implementation Canvas Clock </title>
+	<script src="CanvasClockV2.js"></script>
+</head>
+<body>
+	
+<div class="header-cs">
+	<h1> Analogue Canvas Clock: Dynamic Implementation </h1>
+	<input type="range" min="200" value="250" max="800" class="slider-cs" id="slider">
+	<div class="clockWrapper-cs">
+		<canvas
+			width="250"
+			height="250"
+			id="canvas_01"
+			class="canvas-cs"
+		></canvas>
+	</div>
+</div>
+
+</form>
+
+	<script>
+		function clockCanvasHandler(){
+			const clockCnvs = document.getElementById("canvas_01");
+			const slider = document.getElementById("slider");
+
+			function clockLoop(){
+					analogueClock(clockCnvs,"wipe");
+					analogueClock(clockCnvs,"draw");
+			};
+			setInterval(clockLoop,1000);
+
+			function updateCnvsSize(){
+				clearInterval(clockLoop,1000);
+				clockCnvs.width = slider.value;
+				clockCnvs.height = slider.value;
+				setInterval(clockLoop,1000);
+			};
+
+			slider.addEventListener("mousedown",()=>{
+				slider.addEventListener("mousemove",updateCnvsSize);
+			});
+			slider.addEventListener("mouseup",()=>{
+				slider.removeEventListener("mousemove",updateCnvsSize);
+			});
+			slider.addEventListener("click",()=>{
+				updateCnvsSize();
+			});
+		}
+		
+		window.addEventListener("DOMContentLoaded", () => {
+			clockCanvasHandler();
+		});	
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+	<title> Basic implementation of Canvas Clock</title>
+	<script src="CanvasClockV2.js"></script>
+</head>
+<body>
+	
+<h1>  Analogue Canvas Clock: Basic Implementation </h1>
+
+<div class="clockWrapper-cs">
+	<canvas
+		width="500"
+		height="500"
+		id="canvas_01"
+		class="canvas-cs"
+	></canvas>
+</div>
+
+	<script>
+		function clockCanvasHandler(){
+			const clockCnvs = document.getElementById("canvas_01");
+			function clockLoop(){
+					analogueClock(clockCnvs,"wipe");
+					analogueClock(clockCnvs,"draw");
+			};
+			setInterval(clockLoop,1000);
+		}
+
+		window.addEventListener("DOMContentLoaded", () => {
+			clockCanvasHandler();
+		});
+	</script>
+</body>
+</html>
